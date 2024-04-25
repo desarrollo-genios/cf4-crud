@@ -28,7 +28,11 @@ $clientes = $db->query("SELECT * FROM clientes")->fetchAll(PDO::FETCH_OBJ);
                     <td><?php echo $cliente->nombre;?></td>
                     <td><?php echo $cliente->sexo;?></td>
                     <td><?php echo $cliente->edad;?></td>
+                    
                     <td>
+                        <a href="editar.php?documento=<?php echo $cliente->documento;?>&nombre=<?php echo $cliente->nombre;?>&sexo=<?php echo $cliente->sexo;?>&edad=<?php echo $cliente->edad;?>">
+                            <i class="bi bi-pencil"></i>
+                        </a>
                         <a href="eliminar.php?documento=<?php echo $cliente->documento;?>">
                             <i class="bi bi-trash"></i>
                         </a>
@@ -40,51 +44,3 @@ $clientes = $db->query("SELECT * FROM clientes")->fetchAll(PDO::FETCH_OBJ);
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-/*
-foreach ($clientes as $cliente):
-    echo $cliente->nombre . " " . $cliente->sexo . "<br>";
-endforeach;
-*/
-?>
